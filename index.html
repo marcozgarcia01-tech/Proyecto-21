@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <h1>Pomodoro Timer</h1>
+      <p>Enfócate en una cosa a la vez.</p>
+    </header>
+
+    <section class="temporizador" aria-label="Temporizador Pomodoro">
+      <nav class="tipos-sesion" aria-label="Tipo de sesión">
+        <button class="tipo activo" data-tipo="trabajo">Trabajo</button>
+        <button class="tipo" data-tipo="corto">Descanso corto</button>
+        <button class="tipo" data-tipo="largo">Descanso largo</button>
+      </nav>
+
+      <div class="reloj" id="reloj" role="timer" aria-live="off">25:00</div>
+      <p class="sesion-actual" id="sesionActual">Sesión de trabajo</p>
+
+      <div class="controles">
+        <button id="iniciar" class="boton-principal">Iniciar</button>
+        <button id="reiniciar" class="boton-secundario">Reiniciar</button>
+      </div>
+
+      <div class="progreso">
+        <span>Sesiones completadas</span>
+        <strong id="contador">0</strong>
+        <div class="puntos" id="puntos" aria-label="Progreso de sesiones"></div>
+      </div>
+    </section>
+
+    <section class="configuracion">
+      <h2>Configuración</h2>
+      <div class="campos">
+        <label>Trabajo (minutos)
+          <input type="number" id="minTrabajo" min="1" max="180" value="25">
+        </label>
+        <label>Descanso corto (minutos)
+          <input type="number" id="minCorto" min="1" max="60" value="5">
+        </label>
+        <label>Descanso largo (minutos)
+          <input type="number" id="minLargo" min="1" max="90" value="15">
+        </label>
+      </div>
+      <button id="guardar" class="boton-secundario">Guardar tiempos</button>
+      <p class="nota">El descanso largo se activa automáticamente después de cada 4 sesiones de trabajo.</p>
+    </section>
+
+    <footer>Trabaja con concentración · Descansa · Repite</footer>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
